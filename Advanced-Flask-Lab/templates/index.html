@@ -13,12 +13,12 @@
 
 				<!-- Header -->
 					<header id="header">
-						<span class="avatar"><img src="{{url_for('static',filename='images/avatar.jpg')}}" alt="" /></span>
+						<span class="avatar"><img src="{{image}}" alt=" " /></span>
 
-            <h1>Description</h1>
+            <h1>{{user}}</h1>
             <br>
             <!-- About me button -->
-            <a href="#"><button style="color:white;width:40%" >More about me</button></a>
+            <a href="{{url_for ('about')}}"><button style="color:white;width:40%" >More about me</button></a>
             <!--  -->
             <br> <br>
 						<ul class="icons">
@@ -38,21 +38,59 @@
                 
                 <div>
                       <a href="">
-                        <img src="static/images/thumbs/01.jpg" alt="" />
-                        <h3>Caption... blah blah blah</h3>
+                        <img src="{{url_for ('static',filename='images/thumbs/01.jpg')}}" alt="the night tower" />
+                        <h3>Chicago</h3>
                       </a>
-                
+                </div>
+                <div>
                       <a href="">
-                        <img src="url_for('static',filename='images/thumbs/02.jpg')" alt="" />
-                        <h3>Caption... blah blah blah</h3>
+                        <img src="{{url_for('static',filename='images/thumbs/02.jpg')}}" alt="" />
+                        <h3>this summer</h3>
                       </a>
                 </div>    
                 <div>
                   <a href="">
                         <img src="{{url_for('static',filename='images/thumbs/03.jpg')}}" alt="" />
-                        <h3>Caption... blah blah blah</h3>
+                        <h3>old mall</h3>
                       </a>
                 </div>  
+
+                  <div>
+                      <a href="">
+                        <img src="{{url_for ('static',filename='images/thumbs/04.jpg')}}" alt="the night tower" />
+                        <h3>hiking in nature</h3>
+                      </a>
+                </div>
+                    <div>
+                      <a href="">
+                        <img src="{{url_for ('static',filename='images/thumbs/05.jpg')}}" alt="the night tower" />
+                        <h3>Chicago</h3>
+                      </a>
+                </div>
+                <div>
+                      <a href="">
+                        <img src="{{url_for('static',filename='images/thumbs/06.jpg')}}" alt="" />
+                        <h3>this summer</h3>
+                      </a>
+                </div>    
+                <div>
+                  <a href="">
+                        <img src="{{url_for('static',filename='images/thumbs/07.jpg')}}" alt="" />
+                        <h3>old mall</h3>
+                      </a>
+                </div>  
+
+          
+                
+                
+                <div>
+                	{% for post in posts %}
+                      <a href="">
+                        <img src="{{post}}" alt="" />
+                        <h3>{{posts[post]}}</h3>
+                      </a>
+                </div>    
+                {% endfor %}
 
 							</section>
 
@@ -64,6 +102,8 @@
 					</footer>
 
 			</div>
+
+			 
 
 		<!-- Scripts -->
 			<script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
